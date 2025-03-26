@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap');
+
+body, html {
+    background: #005cb9;
+    color: white;
+    font-family: 'Caveat', cursive;
+    font-size: 2.5em;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.squiggly-doo-da {
+    position: relative;
+}
+
+.squiggly-doo-da::after {
+    content: attr(data-text);
+    animation-name: wiggle;
+    animation-duration: 750ms;
+    animation-iteration-count: infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes wiggle {
+    0% { transform: skewX(0deg) skewY(0deg) translate(0px, 1px); }
+    17% { transform: skewX(0.5deg) skewY(0.1deg) translate(-1px, -1px); }
+    32% { transform: skewX(0.5deg) skewY(0deg) translate(0px, 0px); }
+    48% { transform: skewX(0deg) skewY(0deg) translate(0px, 0px); }
+    63% { transform: skewX(-0.5deg) skewY(-0.1deg) translate(1px, 0px); }
+    79% { transform: skewX(-0.5deg) skewY(0.1deg) translate(0px, -1px); }
+    100% { transform: skewX(0deg) skewY(0deg) translate(0px, 0px); }
+}
